@@ -22,10 +22,22 @@ public class UserService {
         this.userMapper = userMapper;
     }
 
+    /**
+     * Retrieves all users from the database.
+     *
+     * @return List of User objects
+     */
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
+    /**
+     * Retrieves a user by their ID.
+     *
+     * @param id The ID of the user to retrieve
+     * @return The User object if found
+     * @throws RuntimeException if user is not found
+     */
     public User getUserById(Long id) {
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isPresent()) {
@@ -35,11 +47,24 @@ public class UserService {
         }
     }
 
+    /**
+     * Creates a new user.
+     *
+     * @param userDTO The UserDTO object containing user information
+     * @return The created User object
+     */
     public User createUser(UserDTO userDTO) {
         User user = userMapper.toEntity(userDTO);
         return userRepository.save(user);
     }
 
+    /**
+     * Updates an existing user.
+     *
+     * @param id         The ID of the user to update
+     * @param updatedUser The UserDTO object containing updated user information
+     * @return The updated User object
+     */
     public User updateUser(Long id, UserDTO updatedUser) {
         User user = getUserById(id);
         user.setUsername(updatedUser.getUsername());
@@ -47,9 +72,13 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    /**
+     * Deletes a user by their ID.
+     *
+     * @param id The ID of the user to delete
+     */
     public void deleteUser(Long id) {
         User user = getUserById(id);
         userRepository.delete(user);
     }
-    //
 }

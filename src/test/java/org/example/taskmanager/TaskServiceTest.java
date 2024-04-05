@@ -23,16 +23,21 @@ class TaskServiceTest {
     @InjectMocks
     private TaskService taskService;
 
+    // Test case to verify that getAllTasks returns all tasks
     @Test
     void getAllTasks_shouldReturnAllTasks() {
+        // Create a list of tasks
         List<Task> tasks = new ArrayList<>();
         tasks.add(new Task());
         tasks.add(new Task());
 
+        // Mock the findAll method of taskRepository to return the list of tasks
         Mockito.when(taskRepository.findAll()).thenReturn(tasks);
 
+        // Call getAllTasks method of taskService
         List<Task> result = taskService.getAllTasks();
 
+        // Assert that the size of the result list is 2
         Assertions.assertEquals(2, result.size());
     }
 }

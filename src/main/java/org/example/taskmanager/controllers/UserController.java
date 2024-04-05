@@ -23,11 +23,13 @@ public class UserController {
         this.userService = userService;
     }
 
+    // Get all users
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    // Get user by ID
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable Long id) {
         User user = userService.getUserById(id);
@@ -37,22 +39,24 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    // Create a new user
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public User createUser(@Valid @RequestBody UserDTO userDTO) {
         return userService.createUser(userDTO);
     }
 
+    // Update an existing user
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @Valid @RequestBody UserDTO userDTO) {
         return userService.updateUser(id, userDTO);
     }
 
+    // Delete a user by ID
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
     }
-//
 }
 
 
