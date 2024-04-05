@@ -26,5 +26,5 @@ public class SwaggerConfig {
                 // Selects the paths to include in the Swagger documentation
                 .paths(PathSelectors.any())
                 .build();
-    }//
+    }
 }

@@ -13,4 +13,5 @@ public class TaskDTO {
     private String description; // Description of the task
     private boolean completed;  // Flag indicating if the task is completed
     private Long userId;        // Foreign key referencing the user assigned to the task
+    //
 }

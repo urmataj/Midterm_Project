@@ -24,5 +24,6 @@ class TaskControllerIntegrationTest {
                 // Expect the response status to be OK (200)
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
     }
+    //
 }
 

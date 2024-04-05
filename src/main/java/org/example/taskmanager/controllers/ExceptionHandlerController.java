@@ -20,4 +20,5 @@ public class ExceptionHandlerController {
                 .status(HttpStatus.NOT_FOUND)
                 .body(exception.getMessage());
     }
+    //
 }

@@ -36,4 +36,5 @@ public class Task {
     private boolean completed;
 
     // Constructors, getters, and setters omitted for brevity
+    //
 }

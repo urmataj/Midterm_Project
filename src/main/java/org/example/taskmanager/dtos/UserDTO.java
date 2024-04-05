@@ -14,4 +14,5 @@ public class UserDTO {
     private Long id; //The unique identifier for the user.
     private String username; //The username of the user.
     private String email; //The email address of the user.
+    //
 }
