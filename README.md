@@ -1,90 +1,34 @@
-# Task Manager Application
+## Task Manager Application
 
-This is a Task Manager application built with Spring Boot. 
-It allows users to manage tasks and users, 
-providing CRUD operations for both entities.
+This repository contains the code for a Task Manager application developed using Spring Boot and Hibernate. The application allows users to manage tasks and users, providing endpoints for CRUD operations.
 
-## Table of Contents
+### Features
 
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Built With](#built-with)
-- [Authors](#authors)
-- [License](#license)
+- Create, read, update, and delete tasks
+- Create, read, update, and delete users
+- Exception handling for resource not found errors
+- Unit tests and integration tests for controllers, services, and repositories
+- API documentation using Swagger UI
 
-## Features
+### Technologies Used
 
-- CRUD operations for tasks and users
-- Exception handling for resource not found
-- Validation for input data
-- Integration with H2 database for development and PostgreSQL for production
-
-## Getting Started
-
-### Prerequisites
-
-- Java 11
-- Maven
-- IDE (e.g., IntelliJ IDEA, Eclipse)
-
-### Installation
-
-1. Clone the repository:
-
-   git clone https://github.com/your-username/task-manager.git
-
-2. Navigate to the project directory:
-
-   cd task-manager
-
-
-3. Build the project:
-
-   mvn clean install
-
-
-## Usage
-
-1. Start the application:
-
-   mvn spring-boot:run
-
-2. Open a web browser and go to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) to access the Swagger UI for API documentation.
-
-3. Use the API endpoints to manage tasks and users.
-
-## API Documentation
-
-The API documentation is available through Swagger UI. 
-You can access it by running the application and visiting [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
-
-## Testing
-
-Unit tests and integration tests are provided for the application. 
-You can run them using the following command:
-
-mvn test
-
-## Deployment
-
-To deploy the application, you can package it into a JAR file and then run it on a server or cloud platform. 
-You can use the following command to package the application:
-
-mvn package
-
-## Built With
-
+- Java
 - Spring Boot
-- H2 Database
-- PostgreSQL
-- Maven
+- Hibernate
+- H2 Database (for development)
+- PostgreSQL (for production)
+- Swagger UI
+- JUnit
+- Mockito
 
-## Authors
+### Project Structure
 
-- [urmatai.toktosunova@alatoo.edu.kg](https://github.com/urmataj)
+- `src/main/java/org/example/taskmanager/entities`: Contains the entity classes representing tasks and users.
+- `src/main/java/org/example/taskmanager/repositories`: Contains the repository interfaces for tasks and users.
+- `src/main/java/org/example/taskmanager/services`: Contains the service classes for tasks and users.
+- `src/main/java/org/example/taskmanager/controllers`: Contains the controller classes for tasks and users.
+- `src/main/java/org/example/taskmanager/mappers`: Contains the mapper classes for converting between entities and DTOs.
+- `src/main/java/org/example/taskmanager/dtos`: Contains the DTO classes for tasks and users.
+- `src/main/java/org/example/taskmanager/exceptions`: Contains custom exception classes.
+- `src/main/java/org/example/taskmanager/configurations`: Contains configuration classes, such as Swagger configuration.
+- `src/test/java/org/example/taskmanager`: Contains the unit and integration test classes.
